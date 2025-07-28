@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ReportController">
+   <children>
+      <HBox prefHeight="700.0" prefWidth="1300.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="650.0">
+               <children>
+                  <Label contentDisplay="CENTER" minWidth="-Infinity" text="DFS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fx:id="DFSscrollPane" focusTraversable="false" prefHeight="450.0" prefWidth="390.0">
+                     <content>
+                        <Pane fx:id="DFSpane" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="222.0" prefWidth="641.0">
+                     <children>
+                        <GridPane layoutX="500.0" layoutY="10.0" prefHeight="200.0" prefWidth="140.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="23.733343505859374" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="113.06665649414063" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Circle fill="LIGHTGREEN" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fill="LIGHTBLUE" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="2" />
+                              <Circle fill="PINK" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="1" />
+                              <Circle fill="LIGHTYELLOW" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="3" />
+                              <Circle fill="LIGHTGRAY" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="4" />
+                              <Label text="Start Node" GridPane.columnIndex="1" />
+                              <Label text="Goal Node" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Path Node" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Visited Node" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Unvisited Node" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="15.0" layoutY="5.0" prefHeight="190.0" prefWidth="470.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.19993591308594" minWidth="10.0" prefWidth="132.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.00006103515625" minWidth="10.0" prefWidth="338.4000061035156" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="73.199951171875" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="36.400000000000006" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="144.0" text="Execution Time (avg):" textAlignment="JUSTIFY" GridPane.rowIndex="3" />
+                              <Label fx:id="DFStimeLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label prefHeight="18.0" prefWidth="152.0" text="Nodes Visited:" textAlignment="JUSTIFY" GridPane.rowIndex="2" />
+                              <Label prefHeight="18.0" prefWidth="150.0" text="Path Length:" textAlignment="JUSTIFY" GridPane.rowIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="152.0" text="Path Found:" textAlignment="JUSTIFY" />
+                              <Label fx:id="DFSpathLabel" prefHeight="80.0" prefWidth="385.0" text="No path found" wrapText="true" GridPane.columnIndex="1" />
+                              <Label fx:id="DFSlengthLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="DFSvisitedLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label GridPane.rowIndex="4" />
+                              <Label prefHeight="54.0" prefWidth="122.0" text="Deepest Path Explored:" textAlignment="JUSTIFY" wrapText="true" GridPane.rowIndex="4" />
+                              <Label fx:id="DFSdeepestLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="650.0">
+               <children>
+                  <Label contentDisplay="CENTER" minWidth="-Infinity" text="BFS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fx:id="BFSscrollPane" focusTraversable="false" prefHeight="450.0" prefWidth="390.0">
+                     <content>
+                        <Pane fx:id="BFSpane" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="222.0" prefWidth="641.0">
+                     <children>
+                        <GridPane layoutX="500.0" layoutY="10.0" prefHeight="200.0" prefWidth="140.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="23.733343505859374" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="113.06665649414063" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Circle fill="LIGHTGREEN" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fill="LIGHTBLUE" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="2" />
+                              <Circle fill="PINK" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="1" />
+                              <Circle fill="LIGHTYELLOW" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="3" />
+                              <Circle fill="LIGHTGRAY" radius="8.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="4" />
+                              <Label text="Start Node" GridPane.columnIndex="1" />
+                              <Label text="Goal Node" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Path Node" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Visited Node" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Unvisited Node" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="15.0" layoutY="5.0" prefHeight="190.0" prefWidth="470.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.19993591308594" minWidth="10.0" prefWidth="132.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.00006103515625" minWidth="10.0" prefWidth="338.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Execution Time (avg):" GridPane.rowIndex="3" />
+                              <Label fx:id="BFStimeLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Nodes Visited:" GridPane.rowIndex="2" />
+                              <Label text="Path Length:" GridPane.rowIndex="1" />
+                              <Label text="Path Found:" />
+                              <Label fx:id="BFSpathLabel" prefHeight="80.0" prefWidth="386.0" text="No path found" wrapText="true" GridPane.columnIndex="1" />
+                              <Label fx:id="BFSlengthLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="BFSvisitedLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="64.0" prefWidth="99.0" text="Max Parallel Paths:" wrapText="true" GridPane.rowIndex="4" />
+                              <Label fx:id="BFSmaxLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
